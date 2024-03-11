@@ -25,8 +25,13 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -56,7 +61,7 @@ fun AddCard(navController: NavController){
      modifier = Modifier.fillMaxSize(),
      topBar = {
          TopAppBar(
-             title = {Text(text = "Datos de la Tarjeta")},
+             title = {Text(text = "Atrás")},
              navigationIcon = {
                  Icon(
                      modifier = Modifier.clickable {
@@ -69,15 +74,21 @@ fun AddCard(navController: NavController){
      }
 
  ) {
-
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Spacer(modifier = Modifier.height(70.dp))
+        Text("Completar los Datos:",
+            modifier = Modifier.width(300.dp),
+            color = Color(0xFF1C478B),
+            fontWeight = FontWeight.Bold,
+            fontSize = 22.sp,
+            )
+        Spacer(modifier = Modifier.height(10.dp))
         OutlinedTextField(
             modifier = Modifier.width(300.dp),
-            label = { Text(text = "Nombre")},
+            label = { Text(text = "Nombre Usuario")},
             value = nombreData.value,
             onValueChange = {
                 if (it.length < 40)
@@ -85,7 +96,7 @@ fun AddCard(navController: NavController){
             })
         OutlinedTextField(
             modifier = Modifier.width(300.dp),
-            label = { Text(text = "Apellidos")},
+            label = { Text(text = "Tarjeta")},
             value = apellidosData.value,
             onValueChange = {
                 if (it.length < 40)
@@ -93,7 +104,7 @@ fun AddCard(navController: NavController){
             })
         OutlinedTextField(
             modifier = Modifier.width(300.dp),
-            label = { Text(text = "Especialidad")},
+            label = { Text(text = "Número")},
             value = especialidadData.value,
             onValueChange = {
                 if (it.length < 60)
@@ -112,7 +123,8 @@ fun AddCard(navController: NavController){
                 navController.popBackStack()
 
             }) {
-            Text(text ="Guardar datos de la Tarjeta" )
+            Text(text ="Guardar datos de la Tarjeta",
+                fontSize = 18.sp)
         }
     }
  }
