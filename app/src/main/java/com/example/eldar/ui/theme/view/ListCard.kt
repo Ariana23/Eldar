@@ -40,7 +40,7 @@ fun ListCard(navController: NavController){
       .build()
    listCard = db.cardDao().getListCard().toMutableList()
    Scaffold (
-      modifier = Modifier.fillMaxSize(),
+      modifier = Modifier,
       topBar = {
          TopAppBar(
             title = {
@@ -61,7 +61,7 @@ fun ListCard(navController: NavController){
             )
       }
    ){
-      LazyColumn(modifier = Modifier.fillMaxSize().padding(top = 90.dp)){
+      LazyColumn(modifier = Modifier.padding(top = 90.dp)){
          itemsIndexed(listCard){pos, w ->
             Row (modifier = Modifier.fillMaxWidth()){
                Text(

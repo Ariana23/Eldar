@@ -2,13 +2,16 @@ package com.example.eldar.ui.theme.view
 
 import android.annotation.SuppressLint
 import android.widget.Toast
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
@@ -21,12 +24,16 @@ import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -34,6 +41,10 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.airbnb.lottie.compose.LottieAnimation
+import com.airbnb.lottie.compose.LottieCompositionSpec
+import com.airbnb.lottie.compose.rememberLottieComposition
+import com.example.eldar.R
 import com.example.eldar.Router
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -54,16 +65,29 @@ fun Login(navController: NavController) {
 
         Column(
             modifier = Modifier.fillMaxSize(),
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            Image(
+                modifier = Modifier.fillMaxWidth(),
+                contentScale = ContentScale.FillWidth,
+                painter = painterResource(id = R.drawable.top_background),
+                contentDescription = "")
 
+        val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.ani3))
+            LottieAnimation(composition = composition,
+                modifier = Modifier
+                    .size(200.dp)
+                    .align(Alignment.CenterHorizontally)
+            )
             var passwordVisibility = remember { mutableStateOf(false) }
+
+
             Text(
-                text = "BIENVENIDO",
+                text = "BIENVENIDO a ELDAR",
                 fontSize = 34.sp,
-                color = Color.Black,
-                fontWeight = FontWeight.Bold
+                fontWeight = FontWeight.Bold,
+                fontStyle = FontStyle.Italic,
+                color = Color(18, 64, 118)
             )
             Spacer(modifier = Modifier.height(30.dp))
             Spacer(modifier = Modifier.height(30.dp))
@@ -78,6 +102,7 @@ fun Login(navController: NavController) {
                     }
                 }
             )
+            Spacer(modifier = Modifier.height(20.dp))
             OutlinedTextField( modifier = Modifier.fillMaxWidth(0.8f),
                 placeholder = { Text(text = "Contraseña") },
                 value = password.value,
@@ -125,7 +150,7 @@ fun Login(navController: NavController) {
 
         }) {
         Text(
-            text = "Inciar Sesión",
+            text = "Iniciar Sesión",
             fontSize = 24.sp,
         )
 

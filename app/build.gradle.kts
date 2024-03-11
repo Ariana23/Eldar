@@ -83,7 +83,11 @@ dependencies {
 
     //FIREBASE
     implementation("com.google.firebase:firebase-firestore:24.10.3")
-
+//DEPENDENCIA PARA USAR LA ANIMACION
+    implementation("com.airbnb.android:lottie-compose:6.1.0")
+    implementation ("com.airbnb.android:lottie:6.0.0")
+    implementation ("com.airbnb.android:lottie-compose:6.3.0")
+    implementation ("androidx.compose.runtime:runtime:1.6.1")
 
 
 }
