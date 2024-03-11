@@ -56,7 +56,7 @@ fun Home(navController: NavController){
             .background(color = Color.White)
             .fillMaxSize()
             .verticalScroll(rememberScrollState())
-    ){
+    ) {
         Card(
             colors = CardDefaults.cardColors(containerColor = Color(18, 64, 118)),
             shape = RoundedCornerShape(0.dp),
@@ -84,16 +84,19 @@ fun Home(navController: NavController){
                 .fillMaxSize()
                 .padding(20.dp),
             elevation = CardDefaults.cardElevation(
-                defaultElevation =  10.dp,),
+                defaultElevation = 10.dp,
+            ),
             colors = CardDefaults.cardColors(
-                containerColor = Color.White),
-         ){
-            Text(text = "Saldo",
+                containerColor = Color.White
+            ),
+        ) {
+            Text(
+                text = "Saldo",
                 color = Color(0xFF1C478B),
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(15.dp),
                 fontSize = 18.sp,
-                )
+            )
             Text(
                 text = "$ 286.182",
                 maxLines = 2,
@@ -103,7 +106,7 @@ fun Home(navController: NavController){
                 fontFamily = FontFamily.Default,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(10.dp),
-               )
+            )
         }
 
         Spacer(modifier = Modifier.height(10.dp))
@@ -111,12 +114,13 @@ fun Home(navController: NavController){
             colors = ButtonDefaults.buttonColors(Color(18, 64, 118)),
             modifier = Modifier.padding(20.dp),
             onClick = {
-            navController.navigate(Router.LIST_CARD.route)
-        }) {
+                navController.navigate(Router.LIST_CARD.route)
+            }) {
             Text(
                 color = Color.White,
                 fontSize = 18.sp,
-                text = "Lista de tarjetas")
+                text = "Lista de tarjetas"
+            )
         }
 
         Spacer(modifier = Modifier.height(5.dp))
@@ -131,7 +135,8 @@ fun Home(navController: NavController){
                     .fillMaxHeight(),
                 shape = RoundedCornerShape(25.dp),
                 elevation = CardDefaults.cardElevation(
-                    defaultElevation =  18.dp,),
+                    defaultElevation = 18.dp,
+                ),
                 colors = CardDefaults.cardColors(
                     containerColor = Color(0xFF1C478B)
                 ),
@@ -149,7 +154,8 @@ fun Home(navController: NavController){
                         verticalArrangement = Arrangement.Center,
                         horizontalAlignment = Alignment.CenterHorizontally
                     ) {
-                        Image(painter = painterResource(id = R.drawable.visa_symbol),
+                        Image(
+                            painter = painterResource(id = R.drawable.visa_symbol),
                             contentDescription = "",
                             modifier = Modifier
                                 .size(60.dp)
@@ -159,13 +165,14 @@ fun Home(navController: NavController){
                         verticalAlignment = Alignment.CenterVertically,
                         horizontalArrangement = Arrangement.SpaceBetween,
 
-                    ) {
+                        ) {
                         Column(
                             modifier = Modifier.padding(10.dp),
                             verticalArrangement = Arrangement.Center,
                             horizontalAlignment = Alignment.CenterHorizontally
                         ) {
-                            Image(painter = painterResource(id = R.drawable.visa),
+                            Image(
+                                painter = painterResource(id = R.drawable.visa),
                                 contentDescription = "",
                                 modifier = Modifier
                                     .size(60.dp)
@@ -180,7 +187,8 @@ fun Home(navController: NavController){
                     modifier = Modifier
                         .align(Alignment.CenterHorizontally)
                 ) {
-                    Text(text ="**************1234",
+                    Text(
+                        text = "**************1234",
                         color = Color.White,
                         fontFamily = FontFamily.Default,
                         fontWeight = FontWeight.Bold,
@@ -196,16 +204,18 @@ fun Home(navController: NavController){
                         .fillMaxWidth()
                         .padding(5.dp)
                         .align(Alignment.CenterHorizontally)
-                ){
+                ) {
                     Column(
                         modifier = Modifier.padding(10.dp),
                         verticalArrangement = Arrangement.Center,
                         horizontalAlignment = Alignment.CenterHorizontally
-                    ){
-                        Text(text = "Nombre y Apellido",
+                    ) {
+                        Text(
+                            text = "Nombre y Apellido",
                             color = Color.Gray
-                            )
-                        Text(text = "Juana Codoba Alvero",
+                        )
+                        Text(
+                            text = "Juana Codoba Alvero",
                             color = Color.White
                         )
                     }
@@ -213,11 +223,13 @@ fun Home(navController: NavController){
                         modifier = Modifier.padding(10.dp),
                         verticalArrangement = Arrangement.Center,
                         horizontalAlignment = Alignment.CenterHorizontally
-                    ){
-                        Text(text = "Fecha de vencimiento",
+                    ) {
+                        Text(
+                            text = "Fecha de vencimiento",
                             color = Color.Gray
                         )
-                        Text(text = "07/27",
+                        Text(
+                            text = "07/27",
                             color = Color.White
                         )
                     }
@@ -231,55 +243,56 @@ fun Home(navController: NavController){
                 .align(Alignment.CenterHorizontally)
                 .padding(20.dp)
                 .height(80.dp),
-            colors = ButtonDefaults.buttonColors(Color(0xFF1C478B)),
+            colors = ButtonDefaults.buttonColors(Color(215, 228, 192)),
             onClick = {
-            navController.navigate(Router.ADD_CARD.route)
-        }) {
-            Text(fontSize = 22.sp,
+                navController.navigate(Router.ADD_CARD.route)
+            }) {
+            Text(
+                fontSize = 22.sp,
                 text = "AGREGAR TARJETA",
-                color = Color.White)
+                color = Color(0xFF1C478B)
+            )
         }
 
+        Spacer(modifier = Modifier.height(20.dp))
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(5.dp)
+                .align(Alignment.CenterHorizontally)
+        ) {
+            Button(shape = RoundedCornerShape(6.dp),
+                modifier = Modifier
+                    .padding(20.dp)
+                    .height(80.dp),
+                colors = ButtonDefaults.buttonColors(Color(0xFF1C478B)),
+                onClick = {
+                    navController.navigate(Router.ADD_CARD.route)
+                }) {
+                Text(
+                    fontSize = 22.sp,
+                    text = "PAGAR CON TARJETA",
+                    color = Color.White
+                )
+            }
+            Button(shape = RoundedCornerShape(6.dp),
+                modifier = Modifier
+                    .padding(20.dp)
+                    .height(80.dp),
+                colors = ButtonDefaults.buttonColors(Color(0xFF1C478B)),
+                onClick = {
+                    navController.navigate(Router.ADD_CARD.route)
+                }) {
+                Text(
+                    fontSize = 22.sp,
+                    text = "PAGAR CON QR",
+                    color = Color.White
+                )
+            }
+
+        }
     }
 
 }
-
-    /*
-    Scaffold(
-        modifier = Modifier,
-        topBar = {
-                 CenterAlignedTopAppBar(
-                     title = { Text(text = "ELDAR") },
-                     actions = {
-                         IconButton(onClick = {
-                             navController.navigate(Router.LIST_CARD.route)
-                         }) {
-                             androidx.compose.material3.Icon(
-                                 imageVector = Icons.Filled.List,
-                                 contentDescription =""
-                             )
-                             
-                         }
-                     }
-
-                 )
-        },
-        
-        floatingActionButton = {
-            FloatingActionButton(onClick = {
-                navController.navigate(Router.ADD_CARD.route)
-            }) {
-               androidx.compose.material3.Icon(imageVector = Icons.Filled.Add, contentDescription ="" )
-
-            }
-        }
-    ) {
-
-    }
-    Column {
-        Card {
-            Text(text = "holi")
-        }
-    }
-
-}*/
