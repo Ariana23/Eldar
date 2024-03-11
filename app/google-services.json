@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "538894436908",
+    "project_id": "ecommerce-d0231",
+    "storage_bucket": "ecommerce-d0231.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:538894436908:android:589a531f361bdbf0989f89",
+        "android_client_info": {
+          "package_name": "com.example.eldar"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtoqbHCO-3XRNZSETRgiAUek5Ikho01hM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
