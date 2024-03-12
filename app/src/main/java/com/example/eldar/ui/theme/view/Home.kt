@@ -266,28 +266,28 @@ fun Home(navController: NavController){
             Button(shape = RoundedCornerShape(6.dp),
                 modifier = Modifier
                     .padding(20.dp)
-                    .height(80.dp),
+                    .height(50.dp),
                 colors = ButtonDefaults.buttonColors(Color(0xFF1C478B)),
                 onClick = {
-                    navController.navigate(Router.ADD_CARD.route)
+                    navController.navigate(Router.LIST_CARD.route)
                 }) {
                 Text(
                     fontSize = 22.sp,
-                    text = "PAGAR CON TARJETA",
+                    text = "PAGAR ",
                     color = Color.White
                 )
             }
             Button(shape = RoundedCornerShape(6.dp),
                 modifier = Modifier
                     .padding(20.dp)
-                    .height(80.dp),
+                    .height(50.dp),
                 colors = ButtonDefaults.buttonColors(Color(0xFF1C478B)),
                 onClick = {
                     navController.navigate(Router.ADD_CARD.route)
                 }) {
                 Text(
                     fontSize = 22.sp,
-                    text = "PAGAR CON QR",
+                    text = "QR",
                     color = Color.White
                 )
             }

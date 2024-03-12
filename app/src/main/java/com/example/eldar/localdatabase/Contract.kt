@@ -13,6 +13,8 @@ class Contract {
         const val Name = "nameTarjeta"
         const val LAST_NAME = "lastNameTarjeta"
         const val ESPECIALIDAD = "especialidadLista"
+
+
     }
     object SesionTbl{
         const val USER = "user"

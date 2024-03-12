@@ -30,6 +30,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -101,28 +102,82 @@ fun ListCard(navController: NavController){
                      containerColor = Color(0xFF1C478B)
                   )
                ) {
-                     Text(
+                  Row(
+                     verticalAlignment = Alignment.CenterVertically,
+                     horizontalArrangement = Arrangement.SpaceBetween,
+                     modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(5.dp)
+                        .align(Alignment.CenterHorizontally)
+                  ){
+                     Column(
                         modifier = Modifier.padding(10.dp),
-                        text = "Nombre del Usuario: ${w.name}",
-                        fontWeight = FontWeight.Bold,
-                        fontSize = 22.sp,
-                        color = Color.White
-                     )
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally
+                     ){
+                        Text(
+                           modifier = Modifier.padding(10.dp),
+                           text = "${w.lastName}",
+                           fontWeight = FontWeight.Bold,
+                           fontSize = 22.sp,
+                           color = Color.White
+                        )
+                     }
+                  }
+                  Column(
+                     verticalArrangement = Arrangement.Center,
+                     horizontalAlignment = Alignment.CenterHorizontally,
+                     modifier = Modifier
+                        .align(Alignment.CenterHorizontally)
+                  ){
                      Text(
-                        modifier = Modifier.padding(10.dp),
-                        text = "Nombre de la Tarjeta: ${w.lastName}",
+                        text = "${w.especialidad}",
+                        color = Color.White,
+                        fontFamily = FontFamily.Default,
                         fontWeight = FontWeight.Bold,
-                        fontSize = 22.sp,
-                        color = Color.White
+                        fontSize = 30.sp,
                      )
+                  }
+                  Spacer(modifier = Modifier.height(20.dp))
 
-                  Text(
-                     modifier = Modifier.padding(10.dp),
-                     text = "Número de Tarjeta: ${w.especialidad}",
-                     fontWeight = FontWeight.Bold,
-                     fontSize = 22.sp,
-                     color = Color.White
-                  )
+                  Row(
+                     verticalAlignment = Alignment.CenterVertically,
+                     horizontalArrangement = Arrangement.SpaceBetween,
+                     modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(5.dp)
+                        .align(Alignment.CenterHorizontally)
+                  ){
+                     Column(
+                        modifier = Modifier.padding(10.dp),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally
+                     ){
+                        Text(
+                           text = "Nombre y Apellido",
+                           color = Color.Gray
+                        )
+                        Text(
+                           text = "${w.name}",
+                           color = Color.White
+                        )
+                     }
+                     Column(
+                        modifier = Modifier.padding(10.dp),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally
+                     ) {
+                        Text(
+                           text = "Fecha de vencimiento",
+                           color = Color.Gray
+                        )
+                        Text(
+                           text = "07/27",
+                           color = Color.White
+                        )
+                     }
+
+                  }
 
                }
 

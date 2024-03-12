@@ -10,6 +10,8 @@ data class CardData(
     @ColumnInfo (name = Contract.ListaTbl.Name) val name: String,
     @ColumnInfo (name = Contract.ListaTbl.LAST_NAME) val lastName: String,
     @ColumnInfo (name = Contract.ListaTbl.ESPECIALIDAD) val especialidad: String
+
+
 )
 @Entity(tableName = Contract.DB.SESION_TBL)
 data class SesionData(

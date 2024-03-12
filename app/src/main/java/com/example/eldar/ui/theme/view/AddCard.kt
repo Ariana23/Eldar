@@ -47,6 +47,8 @@ fun AddCard(navController: NavController){
     val nombreData : MutableState<String> = remember { mutableStateOf("") }
     val apellidosData : MutableState<String> = remember { mutableStateOf("") }
     val especialidadData : MutableState<String> = remember { mutableStateOf("") }
+    val fechaData : MutableState<String> = remember { mutableStateOf("") }
+
     val context: Context = LocalContext.current
 
     val db: AppDB = Room.databaseBuilder(
@@ -110,6 +112,15 @@ fun AddCard(navController: NavController){
                 if (it.length < 60)
                     especialidadData.value = it
             })
+        OutlinedTextField(
+            modifier = Modifier.width(300.dp),
+            label = { Text(text = "Fecha de Vencimiento")},
+            value = especialidadData.value,
+            onValueChange = {
+                if (it.length < 60)
+                    especialidadData.value = it
+            })
+
         OutlinedButton(
             modifier = Modifier.padding(top = 40.dp),
             onClick = {
