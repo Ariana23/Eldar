@@ -22,6 +22,7 @@ import com.example.eldar.ui.theme.view.AddCard
 import com.example.eldar.ui.theme.view.Home
 import com.example.eldar.ui.theme.view.ListCard
 import com.example.eldar.ui.theme.view.Login
+import com.example.eldar.ui.theme.view.QRCodeApp
 
 class MainActivity : ComponentActivity() {
     lateinit var context: Context
@@ -52,6 +53,9 @@ class MainActivity : ComponentActivity() {
                     }
                     composable(Router.LIST_CARD.route){
                         ListCard(navController = navController)
+                    }
+                    composable(Router.QR_CARD.route){
+                        QRCodeApp(navController = navController)
                     }
 
                 }

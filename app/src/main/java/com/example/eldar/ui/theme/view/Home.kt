@@ -283,7 +283,7 @@ fun Home(navController: NavController){
                     .height(50.dp),
                 colors = ButtonDefaults.buttonColors(Color(0xFF1C478B)),
                 onClick = {
-                    navController.navigate(Router.ADD_CARD.route)
+                    navController.navigate(Router.QR_CARD.route)
                 }) {
                 Text(
                     fontSize = 22.sp,

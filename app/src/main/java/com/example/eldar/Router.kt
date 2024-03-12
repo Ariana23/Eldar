@@ -5,5 +5,6 @@ sealed class Router(val route: String){
     object LOG_IN: Router("LogIn")
     object ADD_CARD: Router("AddCard")
     object LIST_CARD: Router("ListCard")
+    object QR_CARD: Router("QR")
 
 }
