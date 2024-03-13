@@ -22,24 +22,31 @@ import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.List
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.ButtonDefaults.elevatedShape
+import androidx.compose.material3.ButtonDefaults.filledTonalShape
 import androidx.compose.material3.ButtonDefaults.shape
+import androidx.compose.material3.ButtonDefaults.textShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CenterAlignedTopAppBar
+import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme.shapes
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -243,7 +250,7 @@ fun Home(navController: NavController){
                 .align(Alignment.CenterHorizontally)
                 .padding(20.dp)
                 .height(80.dp),
-            colors = ButtonDefaults.buttonColors(Color(215, 228, 192)),
+            colors = ButtonDefaults.buttonColors(Color(220,242,241)),
             onClick = {
                 navController.navigate(Router.ADD_CARD.route)
             }) {
@@ -255,44 +262,137 @@ fun Home(navController: NavController){
         }
 
         Spacer(modifier = Modifier.height(20.dp))
-        Row(
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.SpaceBetween,
+
+        Card(
+            shape = RoundedCornerShape(8.dp),
             modifier = Modifier
-                .fillMaxWidth()
-                .padding(5.dp)
-                .align(Alignment.CenterHorizontally)
+                .fillMaxSize()
+                .padding(20.dp),
+            elevation = CardDefaults.cardElevation(
+                defaultElevation = 10.dp,
+            ),
+            colors = CardDefaults.cardColors(
+                containerColor = Color.White
+            ),
         ) {
-            Button(shape = RoundedCornerShape(6.dp),
+            Text(
+                text = "Seleccione un metodo de pago",
+                maxLines = 2,
+                overflow = TextOverflow.Ellipsis,
+                color = Color(0xFF1C478B),
+                fontSize = 22.sp,
+                fontFamily = FontFamily.Default,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(10.dp),
+            )
+            Column(
                 modifier = Modifier
-                    .padding(20.dp)
-                    .height(50.dp),
-                colors = ButtonDefaults.buttonColors(Color(0xFF1C478B)),
-                onClick = {
-                    navController.navigate(Router.LIST_CARD.route)
-                }) {
-                Text(
-                    fontSize = 22.sp,
-                    text = "PAGAR ",
-                    color = Color.White
-                )
-            }
-            Button(shape = RoundedCornerShape(6.dp),
-                modifier = Modifier
-                    .padding(20.dp)
-                    .height(50.dp),
-                colors = ButtonDefaults.buttonColors(Color(0xFF1C478B)),
-                onClick = {
-                    navController.navigate(Router.QR_CARD.route)
-                }) {
-                Text(
-                    fontSize = 22.sp,
-                    text = "QR",
-                    color = Color.White
-                )
+                    .fillMaxWidth()
+                    .background(color = Color.White)
+            ) {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(5.dp)
+                        .align(Alignment.CenterHorizontally)
+                ){
+                    Column(
+                        modifier = Modifier
+                            .padding(10.dp),
+                        verticalArrangement = Arrangement.Center,
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        IconButton(
+                            modifier = Modifier
+                                .size(80.dp)
+                                .shadow(1.dp, shape)
+                                .background(Color(220,242,241))
+                                .padding(5.dp),
+                            onClick = {
+                                navController.navigate(Router.LIST_CARD.route)
+                            }
+                        )
+                        {
+                            androidx.compose.material3.Icon(
+                                painter = painterResource(id = R.drawable.baseline_credit_card_24),
+                                contentDescription = null,
+                                tint = Color(0xFF1C478B),
+                                modifier = Modifier.size(80.dp)
+                                )
+                        }
+                        Text(
+                            modifier = Modifier.padding(5.dp),
+                            fontSize = 20.sp,
+                            color = Color(0xFF1C478B),
+                            text = "Tarjeta"
+                        )
+                    }
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.SpaceBetween
+                    ){
+                        Column(
+                            modifier = Modifier
+                                .padding(10.dp),
+                            verticalArrangement = Arrangement.Center,
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            IconButton(
+                                modifier = Modifier
+                                    .size(80.dp)
+                                    .shadow(1.dp, shape)
+                                    .background(Color(220,242,241))
+                                    .padding(5.dp),
+                                onClick = {
+                                    navController.navigate(Router.QR_CARD.route)
+                                }
+                            )
+                            {
+                                androidx.compose.material3.Icon(
+                                    painter = painterResource(id = R.drawable.baseline_qr_code_24),
+                                    contentDescription = null,
+                                    tint = Color(0xFF1C478B),
+                                    modifier = Modifier.size(80.dp)
+                                )
+                            }
+                            Text(
+                                modifier = Modifier.padding(5.dp),
+                                fontSize = 20.sp,
+                                color = Color(0xFF1C478B),
+                                text = "QR")
+                        }
+                    }
+                }
+
+
+
             }
 
+
         }
+        Spacer(modifier = Modifier.height(50.dp))
+        Divider(color = Color.LightGray)
+
+        Column(
+            modifier = Modifier.padding(10.dp),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Row (
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Center
+            ){
+                Text(
+                    modifier = Modifier.padding(15.dp),
+                    text = "By Ari",
+                    textAlign = TextAlign.Center,
+                    fontFamily = FontFamily.Default,
+                    color = Color.Gray)
+            }
+        }
+
     }
 
 }

@@ -81,7 +81,7 @@ fun Login(navController: NavController) {
         val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(R.raw.ani3))
             LottieAnimation(composition = composition,
                 modifier = Modifier
-                    .size(200.dp)
+                    .size(250.dp)
                     .align(Alignment.CenterHorizontally)
             )
             var passwordVisibility = remember { mutableStateOf(false) }
@@ -157,6 +157,7 @@ fun Login(navController: NavController) {
         Text(
             text = "Iniciar Sesión",
             fontSize = 24.sp,
+            color = Color(0xFF1C478B),
         )
 
     }
