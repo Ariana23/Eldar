@@ -76,7 +76,9 @@ fun AddCard(navController: NavController){
              title = {Text(text = "Atrás")},
              navigationIcon = {
                  Icon(
-                     modifier = Modifier.clickable {
+                     modifier = Modifier
+                         .size(50.dp)
+                         .clickable {
                             navController.popBackStack()
                      },
                      imageVector = Icons.Filled.ArrowBack,

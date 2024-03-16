@@ -91,6 +91,8 @@ dependencies {
 
     //DEPENDENCIA PARA USAR QR
     implementation("com.google.zxing:core:3.3.0")
+    //DEPENDENCIA PARA USAR OKHTTP - API
+    implementation("com.squareup.okhttp3:okhttp:4.9.1")
 
 
 
