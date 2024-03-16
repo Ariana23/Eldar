@@ -1,4 +1,4 @@
-Eldar App
+Eldar App:
 Aplicación Mobile Nativa, desarrollada con Kotlin, Jetpack Compose.
 Contiene un Inicio de Sesión, desarrollado con el framework, Firebase.
 Su Inicio permite visualizar una billetera virtual, para organizar pagos online.
