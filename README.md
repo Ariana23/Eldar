@@ -4,21 +4,21 @@ Contiene un Inicio de Sesión, desarrollado con el framework, Firebase.
 Su Inicio permite visualizar una billetera virtual, para organizar pagos online, con tarjetas o generando una orden de pago con un QR.
 
 Tecnología:
-    Android Studio
-    Kotlin
-    Gradle
-    Intent
-    Room
-    Jetpack Compose
-    Android Compose
-    Animations
-    Material 3
-    Lottie
-    Accompanist-Permissions
-    Navegation
-    Retrofit
-    ZXING
-    OKHttp
+    Android Studio,
+    Kotlin,
+    Gradle,
+    Intent,
+    Room,
+    Jetpack Compose,
+    Android Compose,
+    Animations,
+    Material 3,
+    Lottie,
+    Accompanist-Permissions,
+    Navegation,
+    Retrofit,
+    ZXING,
+    OKHttp,
     Firebase.
 
 
